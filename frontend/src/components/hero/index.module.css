@@ -1,0 +1,32 @@
+.hero{
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+.picture{
+    background-image: url("https://wallup.net/wp-content/uploads/2017/11/23/521812-light_bulb.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+.text{
+    background-color: rgb(182, 187, 187);
+    padding-left: 6%;
+    padding-right: 6%;
+}
+.headline{
+    font-size: 60px;
+    margin-bottom: 7%;
+    margin-top: 13%;
+}
+.answer{
+    font-size: 25px;
+    margin-bottom: 5%;
+}
+.register{
+    background-color: darkviolet;
+    border-radius: 5px;
+    border-width: 0px;
+    color: rgb(0, 255, 136);
+    font-size: 20px;
+    margin-bottom: 5%;
+}
