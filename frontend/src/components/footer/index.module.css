@@ -1,0 +1,14 @@
+.footer{
+    background-color: darksalmon;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+.about, .number{
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
