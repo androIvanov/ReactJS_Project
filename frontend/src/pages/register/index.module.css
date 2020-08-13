@@ -1,0 +1,10 @@
+.form{
+    display: inline-grid;
+    background-color: rgb(221, 215, 182);
+    text-align: left;
+    margin-bottom: 32%;
+    margin-top: 7%;;
+}
+.wrapper{
+    text-align: center;
+}
