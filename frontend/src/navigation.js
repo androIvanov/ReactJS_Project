@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, useHistory } from 'react-router-dom';
+import { BrowserRouter, Switch, Route,} from 'react-router-dom';
 import GuestHome from './pages/guestHomePage';
 import About from './pages/about';
 import Register from './pages/register/index';
@@ -7,7 +7,7 @@ import Login from './pages/login/index';
 
 const Navigation = () => {
     return (
-        <BrowserRouter history={useHistory()}>
+        <BrowserRouter>
             <Switch>
                 <Route path="/login"><Login /></Route>
                 <Route path="/register"><Register /></Route>

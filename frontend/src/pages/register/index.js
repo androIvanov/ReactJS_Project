@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import styles from './index.module.css';
 import Footer from '../../components/footer';
 import Header from '../../components/header';
@@ -34,7 +34,7 @@ function Register() {
                 'Content-Type' : 'application/json'
             }
         }).then(promis => promis.json())
-        .then(answer => {
+        .then(() => {
             history.push('/login');
         })
     }
