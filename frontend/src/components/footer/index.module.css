@@ -1,6 +1,6 @@
 .footer{
     background-color: darksalmon;
-    position: fixed;
+    position: static;
     bottom: 0px;
     width: 100%;
     display: grid;
