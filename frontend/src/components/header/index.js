@@ -17,7 +17,7 @@ class Header extends Component {
                         return (
                             <div className={styles.header}>
                                 <div className={styles.logo}><Link to="/">IdeaHUB</Link></div>
-                                <button className={styles.login}><Link to="/logout">Logout</Link></button>
+                                <button className={styles.login} onClick={context.logout}><Link to="/logout">Logout</Link></button>
                                 <button className={styles.about}><Link to="/about">About</Link></button>
                             </div>
                         );

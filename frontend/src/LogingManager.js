@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import UserContext from './Context';
 
-class LogingManager extends Component{
-    constructor(props){
+class LogingManager extends Component {
+    constructor(props) {
         super(props)
         this.state = ({
             logged: false,
@@ -11,7 +11,7 @@ class LogingManager extends Component{
     }
 
     login = () => {
-    
+
         this.setState({
             logged: true
         })
@@ -20,17 +20,18 @@ class LogingManager extends Component{
         this.setState({
             logged: false
         })
+        document.cookie = "x-auth-token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     }
 
-    render(){
+    render() {
         return (
             <UserContext.Provider value={
-               {
-                   logged: this.state.logged,
-                   user: this.state.user,
-                   login: this.login,
-                   logout: this.logout
-               }
+                {
+                    logged: this.state.logged,
+                    user: this.state.user,
+                    login: this.login,
+                    logout: this.logout
+                }
             }>
                 {this.props.children}
             </UserContext.Provider>
