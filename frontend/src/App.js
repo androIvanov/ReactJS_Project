@@ -1,8 +1,12 @@
 import React from 'react';
 import Navigation from './navigation';
+import LogingManager from './LogingManager';
+
 function App() {
   return (
-    <Navigation />
+      <LogingManager>
+        <Navigation />
+      </LogingManager>
   );
 }
 

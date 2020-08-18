@@ -1,20 +1,39 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import styles from './index.module.css';
 import { Link } from "react-router-dom";
+import UserContext from '../../Context';
 
-class Header extends Component{
-    constructor(props){
+class Header extends Component {
+    constructor(props) {
         super(props);
         this.state = { logged: false }
     }
-    render(){
-        return(
-            <div className={styles.header}> 
-                <div className={styles.logo}><Link to="/">IdeaHUB</Link></div>
-                <button className={styles.login}><Link to="/login">Login</Link></button>
-                <button className={styles.register}><Link to="/register">Register</Link></button>
-                <button className={styles.about}><Link to="/about">About</Link></button>
-            </div>
+
+    render() {
+        return (
+            <UserContext.Consumer>
+                {(context) => {
+                    if (context.logged === true) {
+                        return (
+                            <div className={styles.header}>
+                                <div className={styles.logo}><Link to="/">IdeaHUB</Link></div>
+                                <button className={styles.login}><Link to="/logout">Logout</Link></button>
+                                <button className={styles.about}><Link to="/about">About</Link></button>
+                            </div>
+                        );
+                    }
+                    else {
+                        return (
+                            <div className={styles.header}>
+                                <div className={styles.logo}><Link to="/">IdeaHUB</Link></div>
+                                <button className={styles.login}><Link to="/login">Login</Link></button>
+                                <button className={styles.register}><Link to="/register">Register</Link></button>
+                                <button className={styles.about}><Link to="/about">About</Link></button>
+                            </div>
+                        );
+                    }
+                }}
+            </UserContext.Consumer>
         );
     }
 }

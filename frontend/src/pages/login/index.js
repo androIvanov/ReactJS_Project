@@ -1,14 +1,16 @@
 import styles from './index.module.css';
 import Footer from '../../components/footer';
 import Header from '../../components/header';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import React from 'react';
+import UserContext from '../../Context';
 
-function Login(){
+const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const history = useHistory();
+    const context = useContext(UserContext);
 
     const handleEmailWiriting = (e) => {
         setEmail(e.target.value);
@@ -25,33 +27,38 @@ function Login(){
                 password
             }),
             headers: {
-                'Content-Type':'application/json'
+                'Content-Type': 'application/json'
             }
         }).then(promise => {
             const token = promise.headers.get('Authorization');
             document.cookie = `x-auth-token=${token}`;
-            promise.json() 
+            promise.json();
+            context.login();
         })
-        .then(() => {
-            history.push('/');
-        })
+            .then(() => {
+                history.push('/');
+            })
     }
-    return(
+
+
+    return (
         <div className={styles.wrapper}>
             <Header />
             <form className={styles.form}>
                 <label>
                     email:
-                    <input type="text" name="email" value={email} onChange={handleEmailWiriting}></input>
+                <input type="text" name="email" value={email} onChange={handleEmailWiriting}></input>
                 </label>
                 <label>
                     password:
-                    <input type="password" name="password" value={password} onChange={handlePasswordWriting}></input>
+                <input type="password" name="password" value={password} onChange={handlePasswordWriting}></input>
                 </label>
                 <button type="submit" onClick={handleSubmit}>Login</button>
             </form>
             <Footer />
         </div>
+
     );
 }
+
 export default Login;
