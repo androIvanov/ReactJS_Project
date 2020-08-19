@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import styles from './index.module.css'
+import { Link } from 'react-router-dom';
 class UserHome extends Component {
     constructor(props) {
         super(props);
@@ -13,7 +14,7 @@ class UserHome extends Component {
                 <div className={styles.content}>
                     <Header />
                     <div className={styles.ideaWrapper}>
-                        <button className={styles.create}>Create</button>
+                        <button className={styles.create}><Link to="/create">Create</Link></button>
                         <div className={styles.ideas}>
                             <div className={styles.idea}>
                                 <p className={styles.title}>Title</p>
@@ -47,7 +48,7 @@ class UserHome extends Component {
                                 </div>
                                 <button className={styles.button}>Details</button>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
