@@ -36,7 +36,7 @@ const Login = () => {
             context.login();
         })
             .then(() => {
-                history.push('/');
+                history.push('/userHome');
             })
     }
 

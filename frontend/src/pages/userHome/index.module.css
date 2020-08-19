@@ -1,0 +1,34 @@
+.content {
+    min-height: calc(100vh - 45px);
+}
+.footer {
+    height: 50px;
+}
+.ideaWrapper{
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: rgb(209, 197, 203);
+}
+.create{
+    text-align: center;
+    margin-left: 47%;
+}
+.idea{
+    border: rgb(169, 169, 195) solid;
+    border-radius: 25px;
+    margin-bottom: 30px;
+}
+.img{
+    width: 250px;
+    float: right;
+    overflow: hidden;
+    justify-self: end;
+}
+.main{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    background-color: rgb(176, 191, 202);
+}
+.button{
+    margin-bottom: 20px;
+}

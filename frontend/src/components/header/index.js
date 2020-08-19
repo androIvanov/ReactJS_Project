@@ -16,7 +16,7 @@ class Header extends Component {
                     if (context.logged === true) {
                         return (
                             <div className={styles.header}>
-                                <div className={styles.logo}><Link to="/">IdeaHUB</Link></div>
+                                <div className={styles.logo}><Link to="/userHome">IdeaHUB</Link></div>
                                 <button className={styles.login} onClick={context.logout}><Link to="/logout">Logout</Link></button>
                                 <button className={styles.about}><Link to="/about">About</Link></button>
                             </div>
