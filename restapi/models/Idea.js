@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const Model = mongoose.model;
 const { String, Number, Boolean, ObjectId } = Schema.Types;
 
-const origamiSchema = new Schema({
+const ideaSchema = new Schema({
 
     description: {
         type: String,
@@ -17,4 +17,4 @@ const origamiSchema = new Schema({
 
 }, { timestamps: { createdAt: 'created_at' } });
 
-module.exports = new Model('Origami', origamiSchema);
+module.exports = new Model('Idea', ideaSchema);

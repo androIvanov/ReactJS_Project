@@ -5,16 +5,20 @@
     height: 50px;
 }
 .form{
-    display: block;
-    width: 1000px;
-    margin: 0 auto;
-    margin-top: 15%;
+    display: inline-grid;
+    margin-top: 10%;
     background-color: thistle;
+    margin-left: 40%;
 }
-.title, .desc, .url{
-    font-size: 60px;
+input{
+    height: 40px;
+    font-size: 30px;
 }
-.titleInput, .descInput, .urlInput{
-    width: 360px;
-    height: 140px;
+label{
+    font-size: 30px;
+}
+.button{
+    margin-top: 45px;
+    height: 40px;
+    font-size: 30px;
 }

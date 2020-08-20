@@ -6,9 +6,20 @@ import { Link } from 'react-router-dom';
 class UserHome extends Component {
     constructor(props) {
         super(props);
+        this.state = ({
+            ideas: [{}]
+        });
     }
-
+    async fetcher(params) {
+        fetch('http://localhost:5000/api/idea',{
+            method: "GET"
+        }).then(answer => {
+            return await answer
+        })
+    }
     render() {
+    this.fetcher()
+
         return (
             <div>
                 <div className={styles.content}>
