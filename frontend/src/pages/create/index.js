@@ -38,6 +38,8 @@ function Create(){
           method: 'POST',
           body: JSON.stringify({
             description: desc,
+            title: title,
+            url: url,
             _id: parseJwt(cookie).id
           }),
           headers: {

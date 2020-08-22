@@ -9,9 +9,10 @@ module.exports = {
     },
 
     post: (req, res, next) => {
-        const { description } = req.body;
+        const { description, title, url } = req.body;
+        console.log("This is the body for the request " + req.body);
         const { _id } = req.body;
-        models.Idea.create({ description, author: _id })
+        models.Idea.create({title, url, description, author: _id })
             .then((createdIdea) => {
                 return Promise.all([
                     models.User.updateOne({ _id }, { $push: { posts: createdIdea } }),

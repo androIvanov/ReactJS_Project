@@ -10,10 +10,11 @@ class LogingManager extends Component {
         });
     }
 
-    login = () => {
+    login = (user) => {
 
         this.setState({
-            logged: true
+            logged: true,
+            user: user
         })
     }
     logout = () => {

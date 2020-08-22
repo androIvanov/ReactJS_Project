@@ -18,6 +18,15 @@ const Login = () => {
     const handlePasswordWriting = (e) => {
         setPassword(e.target.value);
     }
+    function parseJwt (token) {
+        var base64Url = token.split('.')[1];
+        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+    
+        return JSON.parse(jsonPayload);
+    };
     const handleSubmit = (e) => {
         e.preventDefault();
         fetch('http://localhost:5000/api/user/login', {
@@ -33,7 +42,13 @@ const Login = () => {
             const token = promise.headers.get('Authorization');
             document.cookie = `x-auth-token=${token}`;
             promise.json();
-            context.login();
+            fetch('http://localhost:5000/api/user/',{
+                method: "GET"
+            }).then(answer => answer.json())
+            .then((data) => {
+                context.login(data.find(x => x._id === parseJwt(token).id));
+            })
+
         })
             .then(() => {
                 history.push('/userHome');
