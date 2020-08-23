@@ -8,11 +8,13 @@ import UserHome from './pages/userHome';
 import Create from './pages/create';
 import Profile from './pages/profile';
 import Deatails from './pages/details';
+import Deleter from './components/delete';
 
 const Navigation = () => {
     return (
         <BrowserRouter>
             <Switch>
+                <Route path="/delete:id"><Deleter /></Route>
                 <Route path="/details:id"><Deatails /></Route>
                 <Route path="/profile:id"><Profile /></Route>
                 <Route path="/create"><Create /></Route>

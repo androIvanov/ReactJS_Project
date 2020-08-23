@@ -17,3 +17,8 @@
     width: 80%;
     margin: 0 auto;
 }
+.username{
+    font-size: 60px;
+    font-weight: bolder;
+    color: tomato;
+}

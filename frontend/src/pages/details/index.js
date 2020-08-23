@@ -2,7 +2,8 @@ import React, { useState, Component } from 'react';
 import styles from './index.module.css';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
-
+import { Link } from 'react-router-dom';
+ 
 class Deatails extends Component {
 
     constructor(props){
@@ -13,7 +14,8 @@ class Deatails extends Component {
             },
             title: '',
             description: '',
-            url: ''
+            url: '',
+            path: ''
         });
         this.id = document.location.href.split(':')[3]
     }
@@ -25,16 +27,17 @@ class Deatails extends Component {
                 author: result.author,
                 title: result.title,
                 description: result.description,
-                url: result.url
+                url: result.url,
+                path: "/delete:" + result._id 
             });
         })
     }
+
     
-    authorChecker(params) {
-        console.log(parseJwt(document.cookie.split('=')[1]).id);
-        console.log(this.state.author._id);
+    
+    authorChecker(id) {
         if(parseJwt(document.cookie.split('=')[1]).id === this.state.author._id){
-            return(<button>Delete</button>);
+            return(<button><Link to={id}>Delete</Link></button>);
         }else{
             return(<div></div>);
         }
@@ -50,7 +53,7 @@ class Deatails extends Component {
                         <h1>{this.state.title}</h1>
                         <h3>By {this.state.author.username}</h3>
                         <p>{this.state.description}</p>
-                        {this.authorChecker()}
+                        {this.authorChecker(this.state.path)}
                     </div>
                 </div>
                 <div className={styles.footer}>

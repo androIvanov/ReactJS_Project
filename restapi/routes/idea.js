@@ -8,6 +8,6 @@ router.post('/', controllers.idea.post); //
 
 router.put('/:id', auth(), controllers.idea.put);
 
-router.delete('/:id', auth(), controllers.idea.delete);
+router.delete('/:id', controllers.idea.delete);
 
 module.exports = router;

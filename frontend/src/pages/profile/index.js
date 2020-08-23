@@ -43,7 +43,7 @@ class Profile extends Component {
                 <div className={styles.content}>
                     <div className={styles.userCard}>
                         <p>Wellcome!</p>
-                        <p>{this.state.username}</p>
+                        <p className={styles.username}>{this.state.user.username}</p>
                     </div>
                     <div className={styles.subTitle}>
                         <span>Here are your publications:</span>

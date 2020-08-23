@@ -21,3 +21,8 @@
 .button a {
     font-size: 15px;
 }
+.title{
+    font-size: 45px;
+    color: rgb(98, 62, 95);
+    font-weight: 800;
+}

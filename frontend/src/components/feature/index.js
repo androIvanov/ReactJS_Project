@@ -7,8 +7,8 @@ class Feature extends Component{
         return(
             <div>
                 <img className={styles.icon} src="https://cdn.onlinewebfonts.com/svg/img_224481.png" alt="Feature display" />
-                <p className={styles.title}>Feature Title</p>
-                <p className={styles.desc}>Some description for the fature that defines my website.<br /> This should be pretty straight forward and clear.</p>
+                <p className={styles.title}>{this.props.title}</p>
+                <p className={styles.desc}>{this.props.text}</p>
             </div>
         );
     }
