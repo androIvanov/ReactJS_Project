@@ -4,3 +4,10 @@
 .footer {
     height: 50px;
 }
+.ideaCard{
+    text-align: center;
+    margin-top: 25px;
+}
+.img{
+    width: 300px;
+}
