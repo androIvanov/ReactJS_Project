@@ -23,6 +23,13 @@ class LogingManager extends Component {
         })
         document.cookie = "x-auth-token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     }
+    // componentDidMount(){
+    //     if(document.cookie === ""){
+    //         this.logout();
+    //     }else{
+    //         this.login();
+    //     }
+    // }
     render() {
         return (
             <UserContext.Provider value={

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './index.module.css';
-
+import { Link } from 'react-router-dom';
 class Hero extends Component{
     // constructor(props){
     //     super(props);
@@ -15,7 +15,7 @@ class Hero extends Component{
                     <div className={styles.answer}>
                         <span>Its fun and inspiring to share and read ideas.<br/> Some are crazy and others are just showe thoughts,<br /> there is no limitations! Share your bright ideas right now on IdeaHUB!</span>
                     </div>
-                    <button className={styles.register}>Register!</button>
+                    <button className={styles.register}><Link to="/register">Register</Link></button>
                 </div>
                 <div className={styles.picture}>
                 </div>

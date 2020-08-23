@@ -4,6 +4,7 @@ import Footer from '../../components/footer';
 import styles from './index.module.css'
 import { Link } from 'react-router-dom';
 import IdeaCard from '../../components/ideaCard';
+import UserContext from '../../Context';
 class UserHome extends Component {
     constructor(props) {
         super(props);
@@ -26,25 +27,32 @@ class UserHome extends Component {
     renderIdeas(params) {
         return this.state.ideas.map(idea => {
             return (
-                <IdeaCard key={idea._id} title={idea.title} description={idea.description} url={idea.url} />
+                <IdeaCard key={idea._id} title={idea.title} description={idea.description} url={idea.url} id={idea._id} />
             );
         });
     }
 
     render() {
+
         return (
-            <div>
-                <div className={styles.content}>
-                    <Header />
-                    <div className={styles.ideaWrapper}>
-                        <button className={styles.create}><Link to="/create">Create</Link></button>
-                        <div className={styles.ideas}>
-                            {this.renderIdeas()}
+            <UserContext.Consumer>
+                {(context) => {
+                    return (
+                        <div>
+                            <div className={styles.content}>
+                                <Header />
+                                <div className={styles.ideaWrapper}>
+                                    <button className={styles.create}><Link to="/create">Create</Link></button>
+                                    <div className={styles.ideas}>
+                                        {this.renderIdeas()}
+                                    </div>
+                                </div>
+                            </div>
+                            <Footer className={styles.footer} />
                         </div>
-                    </div>
-                </div>
-                <Footer className={styles.footer} />
-            </div>
+                    );
+                }}
+            </UserContext.Consumer>
         );
     }
 }

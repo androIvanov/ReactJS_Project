@@ -9,6 +9,14 @@ class Header extends Component {
         this.state = { logged: false }
     }
 
+    checker() {
+        if (document.cookie === "") {
+            console.log("Empty");
+        } else {
+            console.log("Logged");
+        }
+    }
+
     render() {
         return (
             <UserContext.Consumer>

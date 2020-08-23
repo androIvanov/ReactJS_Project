@@ -1,0 +1,19 @@
+.content {
+    min-height: calc(100vh - 70px);
+  }
+.footer {
+    height: 50px;
+}
+.userCard{
+    text-align: center;
+    background-color: whitesmoke;
+    margin-bottom: 3%;
+}
+.subTitle{
+    text-align: center;
+    margin-bottom: 2%;
+}
+.publications{
+    width: 80%;
+    margin: 0 auto;
+}

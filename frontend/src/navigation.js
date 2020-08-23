@@ -7,11 +7,13 @@ import Login from './pages/login/index';
 import UserHome from './pages/userHome';
 import Create from './pages/create';
 import Profile from './pages/profile';
+import Deatails from './pages/details';
 
 const Navigation = () => {
     return (
         <BrowserRouter>
             <Switch>
+                <Route path="/details:id"><Deatails /></Route>
                 <Route path="/profile:id"><Profile /></Route>
                 <Route path="/create"><Create /></Route>
                 <Route path="/userHome"><UserHome /></Route>
