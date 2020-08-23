@@ -4,7 +4,7 @@ const utils = require('../utils');
 
 module.exports = {
     get: (req, res, next) => {
-        models.User.find()
+        models.User.find().populate('posts')
             .then((user) => res.send(user))
             .catch((err) => res.status(500).send("Error"))
     },
