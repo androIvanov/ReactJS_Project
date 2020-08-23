@@ -22,3 +22,10 @@
     font-weight: bolder;
     color: tomato;
 }
+.greeting{
+    font-size: xx-large;
+    color: rgb(255, 0, 0);
+}
+.label{
+    font-size: xx-large;
+}

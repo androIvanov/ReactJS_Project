@@ -42,11 +42,11 @@ class Profile extends Component {
                 <Header />
                 <div className={styles.content}>
                     <div className={styles.userCard}>
-                        <p>Wellcome!</p>
+                        <p className={styles.greeting}>Wellcome!</p>
                         <p className={styles.username}>{this.state.user.username}</p>
                     </div>
                     <div className={styles.subTitle}>
-                        <span>Here are your publications:</span>
+                        <span className={styles.label}>Here are your publications:</span>
                     </div>
                     <div className={styles.publications}>
                         {this.renderIdeas()}
