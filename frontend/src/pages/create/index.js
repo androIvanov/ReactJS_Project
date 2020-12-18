@@ -48,6 +48,7 @@ function Create(){
         }).then((answer) => {
             history.push('/userHome');
         })
+        console.log("Hey");
     }
 
     return (
